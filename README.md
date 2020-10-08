@@ -16,3 +16,6 @@ python map2.py
 This is mostly HTML though and since we want to make an app, not a webpage. We have to integrate it into a program + UI
 https://python-visualization.github.io/folium/quickstart.html#Getting-Started
 
+Ultralight enables you to build your application's GUI with web pages and C/C++.
+https://docs.ultralig.ht/docs/writing-your-first-app
+
