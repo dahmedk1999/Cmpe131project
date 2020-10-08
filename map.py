@@ -1,6 +1,18 @@
+#use visual studio code for this project
+
 import folium
 import os
 import json
+import urllib.request
+endpoint='https://maps.googleapis.com/maps/api/directions/json?'
+API_KEY='AIzaSyDbVjEnGw9CHvVgECZoDr8LuL0DGXZYzbo'  #Google Maps Directions API KEY
+#https://developers.google.com/maps/documentation/directions/overview
+
+#Other APIs to mess around with
+#https://developers.google.com/maps/documentation/javascript/overview
+#https://developers.google.com/maps/documentation/javascript/streetview
+
+#below is all cloned from a sample repo so use this as a base to implement basic functionality
 
 # Create map object
 m = folium.Map(location=[42.3601, -71.0589], zoom_start=12)

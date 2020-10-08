@@ -10,7 +10,7 @@ m = folium.Map(location=[48, -102], zoom_start=3)
 
 m.choropleth(
     geo_data=states,
-    name='choropleth',
+    name='Choropleth',
     data=state_data,
     columns=['State', 'Unemployment'],
     key_on='feature.id',
