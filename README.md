@@ -13,3 +13,6 @@ pip install pandas
 python map.py
 python map2.py
 ```
+This is mostly HTML though and since we want to make an app, not a webpage. We have to integrate it into a program + UI
+https://python-visualization.github.io/folium/quickstart.html#Getting-Started
+
