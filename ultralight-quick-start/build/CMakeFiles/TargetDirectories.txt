@@ -1,0 +1,4 @@
+C:/Irvine/Ultralight/ultralight-quick-start/build/CMakeFiles/UltralightSDK.dir
+C:/Irvine/Ultralight/ultralight-quick-start/build/CMakeFiles/MyApp.dir
+C:/Irvine/Ultralight/ultralight-quick-start/build/CMakeFiles/ALL_BUILD.dir
+C:/Irvine/Ultralight/ultralight-quick-start/build/CMakeFiles/ZERO_CHECK.dir

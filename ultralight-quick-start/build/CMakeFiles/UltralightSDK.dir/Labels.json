@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Irvine/Ultralight/ultralight-quick-start/build/CMakeFiles/UltralightSDK"
+		},
+		{
+			"file" : "C:/Irvine/Ultralight/ultralight-quick-start/build/CMakeFiles/f9dfbcd1183382eaed5dcf5aa2296420/UltralightSDK.rule"
+		},
+		{
+			"file" : "C:/Irvine/Ultralight/ultralight-quick-start/build/CMakeFiles/26062f2e1331f37c683433014af2fab0/UltralightSDK-complete.rule"
+		},
+		{
+			"file" : "C:/Irvine/Ultralight/ultralight-quick-start/build/CMakeFiles/3c2f2418722de6be7f7d2c2b03b2a5ff/UltralightSDK-install.rule"
+		},
+		{
+			"file" : "C:/Irvine/Ultralight/ultralight-quick-start/build/CMakeFiles/3c2f2418722de6be7f7d2c2b03b2a5ff/UltralightSDK-mkdir.rule"
+		},
+		{
+			"file" : "C:/Irvine/Ultralight/ultralight-quick-start/build/CMakeFiles/3c2f2418722de6be7f7d2c2b03b2a5ff/UltralightSDK-download.rule"
+		},
+		{
+			"file" : "C:/Irvine/Ultralight/ultralight-quick-start/build/CMakeFiles/3c2f2418722de6be7f7d2c2b03b2a5ff/UltralightSDK-update.rule"
+		},
+		{
+			"file" : "C:/Irvine/Ultralight/ultralight-quick-start/build/CMakeFiles/3c2f2418722de6be7f7d2c2b03b2a5ff/UltralightSDK-patch.rule"
+		},
+		{
+			"file" : "C:/Irvine/Ultralight/ultralight-quick-start/build/CMakeFiles/3c2f2418722de6be7f7d2c2b03b2a5ff/UltralightSDK-configure.rule"
+		},
+		{
+			"file" : "C:/Irvine/Ultralight/ultralight-quick-start/build/CMakeFiles/3c2f2418722de6be7f7d2c2b03b2a5ff/UltralightSDK-build.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"UltralightSDK"
+		],
+		"name" : "UltralightSDK"
+	}
+}
