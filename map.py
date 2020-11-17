@@ -4,8 +4,8 @@ import folium
 import os
 import json
 import urllib.request
-endpoint='https://maps.googleapis.com/maps/api/directions/json?'
-API_KEY='AIzaSyDbVjEnGw9CHvVgECZoDr8LuL0DGXZYzbo'  #Google Maps Directions API KEY
+#endpoint='https://maps.googleapis.com/maps/api/directions/json?'
+#API_KEY='AIzaSyDbVjEnGw9CHvVgECZoDr8LuL0DGXZYzbo'  #Google API KEY
 #https://developers.google.com/maps/documentation/directions/overview
 
 #Other APIs to mess around with
