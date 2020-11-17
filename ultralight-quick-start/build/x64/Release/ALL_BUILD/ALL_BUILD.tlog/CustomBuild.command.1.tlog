@@ -1,6 +1,6 @@
-^C:\IRVINE\ULTRALIGHT\ULTRALIGHT-QUICK-START\CMAKELISTS.TXT
+^C:\131PROJECT\CMPE131PROJECT\ULTRALIGHT-QUICK-START\CMAKELISTS.TXT
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Irvine/Ultralight/ultralight-quick-start -BC:/Irvine/Ultralight/ultralight-quick-start/build --check-stamp-file C:/Irvine/Ultralight/ultralight-quick-start/build/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/131Project/Cmpe131project/ultralight-quick-start -BC:/131Project/Cmpe131project/ultralight-quick-start/build --check-stamp-file C:/131Project/Cmpe131project/ultralight-quick-start/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

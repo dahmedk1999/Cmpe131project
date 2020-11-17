@@ -67,3 +67,4 @@ folium.GeoJson(overlay, name='cambridge').add_to(m)
 
 # Generate map
 m.save('map.html')
+m.save('ultralight-quick-start/assets/app.html')

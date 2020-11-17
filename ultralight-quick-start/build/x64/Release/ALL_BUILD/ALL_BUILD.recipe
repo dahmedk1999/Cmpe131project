@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project>
-  <ProjectOutputs>C:\Irvine\Ultralight\ultralight-quick-start\build\x64\Release\ZERO_CHECK;C:\Irvine\Ultralight\ultralight-quick-start\build\x64\Release\UltralightSDK;C:\Irvine\Ultralight\ultralight-quick-start\build\Release\MyApp.exe;C:\Irvine\Ultralight\ultralight-quick-start\build\x64\Release\ALL_BUILD</ProjectOutputs>
+  <ProjectOutputs>C:\131Project\Cmpe131project\ultralight-quick-start\build\x64\Release\ZERO_CHECK;C:\131Project\Cmpe131project\ultralight-quick-start\build\x64\Release\UltralightSDK;C:\131Project\Cmpe131project\ultralight-quick-start\build\Release\MyApp.exe;C:\131Project\Cmpe131project\ultralight-quick-start\build\x64\Release\ALL_BUILD</ProjectOutputs>
   <ContentFiles></ContentFiles>
   <SatelliteDlls></SatelliteDlls>
   <NonRecipeFileRefs></NonRecipeFileRefs>

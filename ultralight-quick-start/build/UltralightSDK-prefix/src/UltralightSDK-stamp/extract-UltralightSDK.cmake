@@ -1,7 +1,7 @@
 # Make file names absolute:
 #
-get_filename_component(filename "C:/Irvine/Ultralight/ultralight-quick-start/build/UltralightSDK-prefix/src/ultralight-sdk-latest-win-x64.7z" ABSOLUTE)
-get_filename_component(directory "C:/Irvine/Ultralight/ultralight-quick-start/build/SDK/" ABSOLUTE)
+get_filename_component(filename "C:/131Project/Cmpe131project/ultralight-quick-start/build/UltralightSDK-prefix/src/ultralight-sdk-latest-win-x64.7z" ABSOLUTE)
+get_filename_component(directory "C:/131Project/Cmpe131project/ultralight-quick-start/build/SDK/" ABSOLUTE)
 
 message(STATUS "extracting...
      src='${filename}'

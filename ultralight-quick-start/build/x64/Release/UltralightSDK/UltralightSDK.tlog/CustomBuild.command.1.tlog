@@ -1,20 +1,20 @@
-^C:\IRVINE\ULTRALIGHT\ULTRALIGHT-QUICK-START\BUILD\CMAKEFILES\3C2F2418722DE6BE7F7D2C2B03B2A5FF\ULTRALIGHTSDK-MKDIR.RULE
+^C:\131PROJECT\CMPE131PROJECT\ULTRALIGHT-QUICK-START\BUILD\CMAKEFILES\1F2CB973A3B0B2728B3417A24768F79F\ULTRALIGHTSDK-MKDIR.RULE
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Irvine/Ultralight/ultralight-quick-start/build/SDK/
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/131Project/Cmpe131project/ultralight-quick-start/build/SDK/
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Irvine/Ultralight/ultralight-quick-start/build/SDK/
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/131Project/Cmpe131project/ultralight-quick-start/build/SDK/
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Irvine/Ultralight/ultralight-quick-start/build/UltralightSDK-prefix
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/131Project/Cmpe131project/ultralight-quick-start/build/UltralightSDK-prefix
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Irvine/Ultralight/ultralight-quick-start/build/UltralightSDK-prefix/tmp
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/131Project/Cmpe131project/ultralight-quick-start/build/UltralightSDK-prefix/tmp
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Irvine/Ultralight/ultralight-quick-start/build/UltralightSDK-prefix/src/UltralightSDK-stamp/Release
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/131Project/Cmpe131project/ultralight-quick-start/build/UltralightSDK-prefix/src/UltralightSDK-stamp/Release
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Irvine/Ultralight/ultralight-quick-start/build/UltralightSDK-prefix/src
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/131Project/Cmpe131project/ultralight-quick-start/build/UltralightSDK-prefix/src
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Irvine/Ultralight/ultralight-quick-start/build/UltralightSDK-prefix/src/UltralightSDK-stamp
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/131Project/Cmpe131project/ultralight-quick-start/build/UltralightSDK-prefix/src/UltralightSDK-stamp
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Irvine/Ultralight/ultralight-quick-start/build/UltralightSDK-prefix/src/UltralightSDK-stamp/Release/UltralightSDK-mkdir
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/131Project/Cmpe131project/ultralight-quick-start/build/UltralightSDK-prefix/src/UltralightSDK-stamp/Release/UltralightSDK-mkdir
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -22,19 +22,19 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^C:\IRVINE\ULTRALIGHT\ULTRALIGHT-QUICK-START\BUILD\CMAKEFILES\3C2F2418722DE6BE7F7D2C2B03B2A5FF\ULTRALIGHTSDK-DOWNLOAD.RULE
+^C:\131PROJECT\CMPE131PROJECT\ULTRALIGHT-QUICK-START\BUILD\CMAKEFILES\1F2CB973A3B0B2728B3417A24768F79F\ULTRALIGHTSDK-DOWNLOAD.RULE
 setlocal
-cd C:\Irvine\Ultralight\ultralight-quick-start\build
+cd C:\131Project\Cmpe131project\ultralight-quick-start\build
 if %errorlevel% neq 0 goto :cmEnd
 C:
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -P C:/Irvine/Ultralight/ultralight-quick-start/build/UltralightSDK-prefix/src/UltralightSDK-stamp/download-UltralightSDK.cmake
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/131Project/Cmpe131project/ultralight-quick-start/build/UltralightSDK-prefix/src/UltralightSDK-stamp/download-UltralightSDK.cmake
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -P C:/Irvine/Ultralight/ultralight-quick-start/build/UltralightSDK-prefix/src/UltralightSDK-stamp/verify-UltralightSDK.cmake
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/131Project/Cmpe131project/ultralight-quick-start/build/UltralightSDK-prefix/src/UltralightSDK-stamp/verify-UltralightSDK.cmake
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -P C:/Irvine/Ultralight/ultralight-quick-start/build/UltralightSDK-prefix/src/UltralightSDK-stamp/extract-UltralightSDK.cmake
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/131Project/Cmpe131project/ultralight-quick-start/build/UltralightSDK-prefix/src/UltralightSDK-stamp/extract-UltralightSDK.cmake
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Irvine/Ultralight/ultralight-quick-start/build/UltralightSDK-prefix/src/UltralightSDK-stamp/Release/UltralightSDK-download
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/131Project/Cmpe131project/ultralight-quick-start/build/UltralightSDK-prefix/src/UltralightSDK-stamp/Release/UltralightSDK-download
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -42,11 +42,11 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^C:\IRVINE\ULTRALIGHT\ULTRALIGHT-QUICK-START\BUILD\CMAKEFILES\3C2F2418722DE6BE7F7D2C2B03B2A5FF\ULTRALIGHTSDK-UPDATE.RULE
+^C:\131PROJECT\CMPE131PROJECT\ULTRALIGHT-QUICK-START\BUILD\CMAKEFILES\1F2CB973A3B0B2728B3417A24768F79F\ULTRALIGHTSDK-UPDATE.RULE
 setlocal
 "C:\Program Files\CMake\bin\cmake.exe" -E echo_append
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Irvine/Ultralight/ultralight-quick-start/build/UltralightSDK-prefix/src/UltralightSDK-stamp/Release/UltralightSDK-update
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/131Project/Cmpe131project/ultralight-quick-start/build/UltralightSDK-prefix/src/UltralightSDK-stamp/Release/UltralightSDK-update
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -54,11 +54,11 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^C:\IRVINE\ULTRALIGHT\ULTRALIGHT-QUICK-START\BUILD\CMAKEFILES\3C2F2418722DE6BE7F7D2C2B03B2A5FF\ULTRALIGHTSDK-PATCH.RULE
+^C:\131PROJECT\CMPE131PROJECT\ULTRALIGHT-QUICK-START\BUILD\CMAKEFILES\1F2CB973A3B0B2728B3417A24768F79F\ULTRALIGHTSDK-PATCH.RULE
 setlocal
 "C:\Program Files\CMake\bin\cmake.exe" -E echo_append
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Irvine/Ultralight/ultralight-quick-start/build/UltralightSDK-prefix/src/UltralightSDK-stamp/Release/UltralightSDK-patch
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/131Project/Cmpe131project/ultralight-quick-start/build/UltralightSDK-prefix/src/UltralightSDK-stamp/Release/UltralightSDK-patch
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -66,31 +66,15 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^C:\IRVINE\ULTRALIGHT\ULTRALIGHT-QUICK-START\BUILD\CMAKEFILES\3C2F2418722DE6BE7F7D2C2B03B2A5FF\ULTRALIGHTSDK-CONFIGURE.RULE
+^C:\131PROJECT\CMPE131PROJECT\ULTRALIGHT-QUICK-START\BUILD\CMAKEFILES\1F2CB973A3B0B2728B3417A24768F79F\ULTRALIGHTSDK-CONFIGURE.RULE
 setlocal
-cd C:\Irvine\Ultralight\ultralight-quick-start\build\SDK
-if %errorlevel% neq 0 goto :cmEnd
-C:
-if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
-if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Irvine/Ultralight/ultralight-quick-start/build/UltralightSDK-prefix/src/UltralightSDK-stamp/Release/UltralightSDK-configure
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd
-^C:\IRVINE\ULTRALIGHT\ULTRALIGHT-QUICK-START\BUILD\CMAKEFILES\3C2F2418722DE6BE7F7D2C2B03B2A5FF\ULTRALIGHTSDK-BUILD.RULE
-setlocal
-cd C:\Irvine\Ultralight\ultralight-quick-start\build\SDK
+cd C:\131Project\Cmpe131project\ultralight-quick-start\build\SDK
 if %errorlevel% neq 0 goto :cmEnd
 C:
 if %errorlevel% neq 0 goto :cmEnd
 "C:\Program Files\CMake\bin\cmake.exe" -E echo_append
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Irvine/Ultralight/ultralight-quick-start/build/UltralightSDK-prefix/src/UltralightSDK-stamp/Release/UltralightSDK-build
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/131Project/Cmpe131project/ultralight-quick-start/build/UltralightSDK-prefix/src/UltralightSDK-stamp/Release/UltralightSDK-configure
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -98,15 +82,15 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^C:\IRVINE\ULTRALIGHT\ULTRALIGHT-QUICK-START\BUILD\CMAKEFILES\3C2F2418722DE6BE7F7D2C2B03B2A5FF\ULTRALIGHTSDK-INSTALL.RULE
+^C:\131PROJECT\CMPE131PROJECT\ULTRALIGHT-QUICK-START\BUILD\CMAKEFILES\1F2CB973A3B0B2728B3417A24768F79F\ULTRALIGHTSDK-BUILD.RULE
 setlocal
-cd C:\Irvine\Ultralight\ultralight-quick-start\build\SDK
+cd C:\131Project\Cmpe131project\ultralight-quick-start\build\SDK
 if %errorlevel% neq 0 goto :cmEnd
 C:
 if %errorlevel% neq 0 goto :cmEnd
 "C:\Program Files\CMake\bin\cmake.exe" -E echo_append
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Irvine/Ultralight/ultralight-quick-start/build/UltralightSDK-prefix/src/UltralightSDK-stamp/Release/UltralightSDK-install
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/131Project/Cmpe131project/ultralight-quick-start/build/UltralightSDK-prefix/src/UltralightSDK-stamp/Release/UltralightSDK-build
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -114,13 +98,15 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^C:\IRVINE\ULTRALIGHT\ULTRALIGHT-QUICK-START\BUILD\CMAKEFILES\26062F2E1331F37C683433014AF2FAB0\ULTRALIGHTSDK-COMPLETE.RULE
+^C:\131PROJECT\CMPE131PROJECT\ULTRALIGHT-QUICK-START\BUILD\CMAKEFILES\1F2CB973A3B0B2728B3417A24768F79F\ULTRALIGHTSDK-INSTALL.RULE
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Irvine/Ultralight/ultralight-quick-start/build/CMakeFiles/Release
+cd C:\131Project\Cmpe131project\ultralight-quick-start\build\SDK
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Irvine/Ultralight/ultralight-quick-start/build/CMakeFiles/Release/UltralightSDK-complete
+C:
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Irvine/Ultralight/ultralight-quick-start/build/UltralightSDK-prefix/src/UltralightSDK-stamp/Release/UltralightSDK-done
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/131Project/Cmpe131project/ultralight-quick-start/build/UltralightSDK-prefix/src/UltralightSDK-stamp/Release/UltralightSDK-install
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -128,7 +114,21 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^C:\IRVINE\ULTRALIGHT\ULTRALIGHT-QUICK-START\BUILD\CMAKEFILES\F9DFBCD1183382EAED5DCF5AA2296420\ULTRALIGHTSDK.RULE
+^C:\131PROJECT\CMPE131PROJECT\ULTRALIGHT-QUICK-START\BUILD\CMAKEFILES\13EDDB9D7587A8631373D944C2BA1B8C\ULTRALIGHTSDK-COMPLETE.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/131Project/Cmpe131project/ultralight-quick-start/build/CMakeFiles/Release
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/131Project/Cmpe131project/ultralight-quick-start/build/CMakeFiles/Release/UltralightSDK-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/131Project/Cmpe131project/ultralight-quick-start/build/UltralightSDK-prefix/src/UltralightSDK-stamp/Release/UltralightSDK-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\131PROJECT\CMPE131PROJECT\ULTRALIGHT-QUICK-START\BUILD\CMAKEFILES\32DFE525DE6BB605D2C9E4CAB0C731BD\ULTRALIGHTSDK.RULE
 setlocal
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -136,9 +136,9 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^C:\IRVINE\ULTRALIGHT\ULTRALIGHT-QUICK-START\CMAKELISTS.TXT
+^C:\131PROJECT\CMPE131PROJECT\ULTRALIGHT-QUICK-START\CMAKELISTS.TXT
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Irvine/Ultralight/ultralight-quick-start -BC:/Irvine/Ultralight/ultralight-quick-start/build --check-stamp-file C:/Irvine/Ultralight/ultralight-quick-start/build/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/131Project/Cmpe131project/ultralight-quick-start -BC:/131Project/Cmpe131project/ultralight-quick-start/build --check-stamp-file C:/131Project/Cmpe131project/ultralight-quick-start/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

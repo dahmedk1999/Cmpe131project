@@ -1,6 +1,6 @@
-^C:\IRVINE\ULTRALIGHT\ULTRALIGHT-QUICK-START\BUILD\CMAKEFILES\F9DFBCD1183382EAED5DCF5AA2296420\GENERATE.STAMP.RULE
+^C:\131PROJECT\CMPE131PROJECT\ULTRALIGHT-QUICK-START\BUILD\CMAKEFILES\32DFE525DE6BB605D2C9E4CAB0C731BD\GENERATE.STAMP.RULE
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Irvine/Ultralight/ultralight-quick-start -BC:/Irvine/Ultralight/ultralight-quick-start/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Irvine/Ultralight/ultralight-quick-start/build/MyApp.sln
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/131Project/Cmpe131project/ultralight-quick-start -BC:/131Project/Cmpe131project/ultralight-quick-start/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/131Project/Cmpe131project/ultralight-quick-start/build/MyApp.sln
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
