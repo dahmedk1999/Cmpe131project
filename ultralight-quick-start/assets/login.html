@@ -7,7 +7,7 @@
 body {font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;background-color:#080808;}
 
 /* Full-width input fields */
-input[type=text], input[type=password] {
+input[type=text],input[type=email], input[type=password] {
   width: 100%;
   padding: 12px 20px;
   margin: 10px 0;
@@ -149,7 +149,7 @@ justify-content: center;
 
 
 <div id="id01" class="modal">
-  
+  <!-- /action_page.php is placeholder password/user handling , try replacing it with app.html -->
   <form class="modal-content animate" action="/action_page.php" method="post" style="background-color:#080808">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Popup">&times;</span>
@@ -159,9 +159,12 @@ justify-content: center;
     <div class="container" style="background-color:#080808">
       <label for="uname" style="color: white;"><b>Username</b></label>
       <input type="text" style="color: whitesmoke;" placeholder="Enter Username" name="uname" required>
+      
+      <label for="uemail" style="color: white;"><b>Email</b></label>
+      <input type="email" style="color: whitesmoke;" placeholder="Enter your email" name="uemail" required>
 
       <label for="psw" style="color: white;"><b>Password</b></label>
-      <input type="password" style="color: whitesmoke;" placeholder="Enter Password" name="psw" required>
+      <input type="password" style="color: whitesmoke;" minlength="16" title="Password must be 16+ characters including one capital letter, lowercase letter, number, and special character." pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!#%*?&]{16,}$" placeholder="Enter Password (16 characters)" name="psw" required>
         
       <button type="submit">Login</button>
       <label style="color: white;">
