@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 
-body {font-family: Arial, Helvetica, sans-serif;background-color:#080808;}
+body {font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;background-color:#080808;}
 
 /* Full-width input fields */
 input[type=text], input[type=password] {
@@ -18,6 +18,7 @@ input[type=text], input[type=password] {
 }
 
 /* Set a style for all buttons */
+
 button {
   color: white;
   padding: 14px 20px;
@@ -62,7 +63,7 @@ span.psw {
 
 /* The Modal (background) */
 .modal {
-  display: block; /* Hidden by default */
+  display: block; /* Shown by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 0;
@@ -125,38 +126,52 @@ span.psw {
      width: 100%;
   }
 }
+h1{
+  text-align:center;
+  color: white;
+}
+.centering{
+height: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
 </style>
 </head>
 <body>
 
-<h2>Login to AbleGo</h2>
+<h1>Welcome to AbleGo</h1>
 
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+<div class="centering">
+  <button onclick="document.getElementById('id01').style.display='block'" style="width:25%;">Login</button>
+</div>
+
 
 <div id="id01" class="modal">
   
   <form class="modal-content animate" action="/action_page.php" method="post" style="background-color:#080808">
     <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Popup">&times;</span>
       <img src="avatar.png" alt="Avatar" class="avatar">
     </div>
 
-    <div class="container"style="background-color:#080808">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+    <div class="container" style="background-color:#080808">
+      <label for="uname" style="color: white;"><b>Username</b></label>
+      <input type="text" style="color: whitesmoke;" placeholder="Enter Username" name="uname" required>
 
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+      <label for="psw" style="color: white;"><b>Password</b></label>
+      <input type="password" style="color: whitesmoke;" placeholder="Enter Password" name="psw" required>
         
       <button type="submit">Login</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
+      <label style="color: white;">
+        <input type="checkbox" checked="checked" name="remember" style="color:white;">  Remember me
       </label>
     </div>
 
     <div class="container" style="background-color:#080808">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
+      <span class="psw" style="color: white;">Forgot <a href="forgotpassword.html">password?</a></span>
     </div>
   </form>
 </div>
