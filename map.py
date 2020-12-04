@@ -5,7 +5,7 @@ import os
 import json
 import urllib.request
 #endpoint='https://maps.googleapis.com/maps/api/directions/json?'
-#API_KEY='AIzaSyDbVjEnGw9CHvVgECZoDr8LuL0DGXZYzbo'  #Google API KEY
+#API_KEY='x'  #Google API KEY, replace x with API from google cloud when making own map.
 #https://developers.google.com/maps/documentation/directions/overview
 
 #Other APIs to mess around with
