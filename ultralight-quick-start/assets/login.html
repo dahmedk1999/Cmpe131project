@@ -89,7 +89,7 @@ span.psw {
   position: absolute;
   right: 25px;
   top: 0;
-  color: #000;
+  color: rgb(145, 145, 145);
   font-size: 35px;
   font-weight: bold;
 }
@@ -164,7 +164,7 @@ justify-content: center;
       <input type="email" style="color: whitesmoke;" placeholder="Enter your email" name="uemail" required>
 
       <label for="psw" style="color: white;"><b>Password</b></label>
-      <input type="password" style="color: whitesmoke;" minlength="16" title="Password must be 16+ characters including one capital letter, lowercase letter, number, and special character." pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!#%*?&]{16,}$" placeholder="Enter Password (16 characters)" name="psw" required>
+      <input type="password" style="color: whitesmoke;" minlength="16" title="Passwords must be 16 or more characters, contain at least one number, lowercase letter, uppercase letter, and a special character." pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!#%*?&]{16,}$" placeholder="Enter Password" name="psw" required>
         
       <button type="submit">Login</button>
       <label style="color: white;">
