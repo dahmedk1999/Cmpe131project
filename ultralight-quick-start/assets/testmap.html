@@ -22,14 +22,7 @@
 /**
  * Data object to be written to Firebase.
  */
-var data = 
-{
-    sender: null,
-    timestamp: null,
-    lat: null,
-    lng: null,
-    distance:null
-};
+
 
 function makeInfoBox(controlDiv, map) {
   // Set CSS for the control border.
@@ -70,8 +63,6 @@ function makeInfoBox(controlDiv, map) {
         // Listen for clicks and add the location of the click to firebase.
         google.maps.event.addListener(map, 'dblclick', function (event) {
           placestartMarker(event.latLng);
-          data.lat = event.latLng.lat();
-          data.lng = event.latLng.lng();
         });
 
         // Create a starting marker.
@@ -81,7 +72,6 @@ function makeInfoBox(controlDiv, map) {
             position: location,
             map: map,
             draggable: true,
-            data:[]
           });
         }
       }
