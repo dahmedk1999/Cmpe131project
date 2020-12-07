@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
 
     <style>
       /* Always set the map height explicitly to define the size of the div
@@ -19,34 +18,18 @@
   </head>
   <body>
     <div id="map"></div>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
-
-
     <script>
-/**
- * Firebase config block.
- */
-var config = {
-    apiKey: "AIzaSyD_eiQ1CH1VTFNnQLGLxigPL-F76Gplu0U",
-    authDomain: "abyssal-moon-291902.firebaseapp.com",
-    projectId: "abyssal-moon-291902",
-    storageBucket: "abyssal-moon-291902.appspot.com",
-    messagingSenderId: "222024005856",
-    appId: "1:222024005856:web:898a69ccd7776da05d3885",
-    measurementId: "G-YWXNLTZH5X"
-};
-
-firebase.initializeApp(config);
-//firebase.analytics();
-
 /**
  * Data object to be written to Firebase.
  */
-var data = {sender: null, timestamp: null, lat: null, lng: null};
+var data = 
+{
+    sender: null,
+    timestamp: null,
+    lat: null,
+    lng: null,
+    distance:null
+};
 
 function makeInfoBox(controlDiv, map) {
   // Set CSS for the control border.
@@ -59,43 +42,17 @@ function makeInfoBox(controlDiv, map) {
   controlUI.style.marginTop = '10px';
   controlUI.style.textAlign = 'center';
   controlDiv.appendChild(controlUI);
-
-  // Set CSS for the control interior.
-  var controlText = document.createElement('div');
-  controlText.style.color = 'rgb(25,25,25)';
-  controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
-  controlText.style.fontSize = '100%';
-  controlText.style.padding = '6px';
-  controlText.textContent =
-      'The map shows all clicks made in the last 10 minutes.';
-  controlUI.appendChild(controlText);
 }
 
-      /**
-      * Starting point for running the program. Authenticates the user.
-      * @param {function()} onAuthSuccess - Called when authentication succeeds.
-      */
-      function initAuthentication(onAuthSuccess) {
-        firebase.auth().signInAnonymously().catch(function(error) {
-          console.log(error.code + ', ' + error.message);
-        }, {remember: 'sessionOnly'});
-
-        firebase.auth().onAuthStateChanged(function(user) {
-          if (user) {
-            data.sender = user.uid;
-            onAuthSuccess();
-          } else {
-            // User is signed out.
-          }
-        });
-      }
 
       /**
-       * Creates a map object with a click listener and a heatmap.
+       * Creates a map object with a click listener and a marker.
        */
+      var myLatlng = new google.maps.LatLng(37.337341228,-121.8766039);
+
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 37.3372, lng: -121.8858},
+          center: {lat: 37.337341228, lng: -121.8766039},
           zoom: 12,
           styles: [{
             featureType: 'poi',
@@ -109,116 +66,24 @@ function makeInfoBox(controlDiv, map) {
           streetViewControl: true,
         });
 
-        // Create the DIV to hold the control and call the makeInfoBox() constructor
-        // passing in this DIV.
-        var infoBoxDiv = document.createElement('div');
-        makeInfoBox(infoBoxDiv, map);
-        map.controls[google.maps.ControlPosition.TOP_CENTER].push(infoBoxDiv);
 
         // Listen for clicks and add the location of the click to firebase.
-        map.addListener('click', function(e) {
-          data.lat = e.latLng.lat();
-          data.lng = e.latLng.lng();
-          addToFirebase(data);
+        google.maps.event.addListener(map, 'dblclick', function (event) {
+          placestartMarker(event.latLng);
+          data.lat = event.latLng.lat();
+          data.lng = event.latLng.lng();
         });
 
-        // Create a heatmap.
-        var heatmap = new google.maps.visualization.HeatmapLayer({
-          data: [],
-          map: map,
-          radius: 16
-        });
-
-        initAuthentication(initFirebase.bind(undefined, heatmap));
-      }
-
-      /**
-       * Set up a Firebase with deletion on clicks older than expiryMs
-       * @param {!google.maps.visualization.HeatmapLayer} heatmap The heatmap to
-       */
-      function initFirebase(heatmap) {
-
-        // 10 minutes before current time.
-        var startTime = new Date().getTime() - (60 * 10 * 1000);
-
-        // Reference to the clicks in Firebase.
-        var clicks = firebase.database().ref('clicks');
-
-        // Listen for clicks and add them to the heatmap.
-        clicks.orderByChild('timestamp').startAt(startTime).on('child_added',
-          function(snapshot) {
-            // Get that click from firebase.
-            var newPosition = snapshot.val();
-            var point = new google.maps.LatLng(newPosition.lat, newPosition.lng);
-            var elapsedMs = Date.now() - newPosition.timestamp;
-
-            // Add the point to the heatmap.
-            heatmap.getData().push(point);
-
-            // Request entries older than expiry time (10 minutes).
-            var expiryMs = Math.max(60 * 10 * 1000 - elapsedMs, 0);
-
-            // Set client timeout to remove the point after a certain time.
-            window.setTimeout(function() {
-              // Delete the old point from the database.
-              snapshot.ref.remove();
-            }, expiryMs);
-          }
-        );
-
-        // Remove old data from the heatmap when a point is removed from firebase.
-        clicks.on('child_removed', function(snapshot, prevChildKey) {
-          var heatmapData = heatmap.getData();
-          var i = 0;
-          while (snapshot.val().lat != heatmapData.getAt(i).lat()
-            || snapshot.val().lng != heatmapData.getAt(i).lng()) {
-            i++;
-          }
-          heatmapData.removeAt(i);
-        });
-      }
-
-      /**
-       * Updates the last_message/ path with the current timestamp.
-       * @param {function(Date)} addClick After the last message timestamp has been updated,
-       *     this function is called with the current timestamp to add the
-       *     click to the firebase.
-       */
-      function getTimestamp(addClick) {
-        // Reference to location for saving the last click time.
-        var ref = firebase.database().ref('last_message/' + data.sender);
-
-        ref.onDisconnect().remove();  // Delete reference from firebase on disconnect.
-
-        // Set value to timestamp.
-        ref.set(firebase.database.ServerValue.TIMESTAMP, function(err) {
-          if (err) {  // Write to last message was unsuccessful.
-            console.log(err);
-          } else {  // Write to last message was successful.
-            ref.once('value', function(snap) {
-              addClick(snap.val());  // Add click with same timestamp.
-            }, function(err) {
-              console.warn(err);
-            });
-          }
-        });
-      }
-
-      /**
-       * Adds a click to firebase.
-       * @param {Object} data The data to be added to firebase.
-       *     It contains the lat, lng, sender and timestamp.
-       */
-      function addToFirebase(data) {
-        getTimestamp(function(timestamp) {
-          // Add the new timestamp to the record data.
-          data.timestamp = timestamp;
-          var ref = firebase.database().ref('clicks').push(data, function(err) {
-            if (err) {  // Data was not written to firebase.
-              console.warn(err);
-            }
+        // Create a starting marker.
+        function placestartMarker(location) {
+          
+          var marker = new google.maps.Marker({
+            position: location,
+            map: map,
+            draggable: true,
+            data:[]
           });
-        });
+        }
       }
     </script>
     <script defer
