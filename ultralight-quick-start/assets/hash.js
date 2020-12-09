@@ -98,12 +98,11 @@ class linear extends Hash {
         let index = 0;
         if (this.table[position][index] != key && this.table[position][index] != NULL){
             return this.table[position][index];
-            index++;
         } 
         else { 
             return null;
-            index++;
         }
+        //index++;
     }
 }
 
