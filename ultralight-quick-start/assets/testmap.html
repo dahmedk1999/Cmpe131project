@@ -31,7 +31,7 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_eiQ1CH1VTFNnQLGLxigPL-F76Gplu0U&libraries=visualization&callback=initMap">
     </script>
   <div id="map" style="width: 75%;float:left;"></div>
-
+<!-- Panel where directions would appear when implementing it -->
   <div id="right-panel"></div>
 
   <script>
@@ -70,7 +70,7 @@
 
 
 
-      // Listen for clicks and add the location of the click to firebase.
+      // Listen for clicks and add the location of the click as a marker
       map.addListener('dblclick', function (event) {
         placeMarkers(event.latLng, map);
       });
