@@ -15,9 +15,9 @@ class Hash {
 
     hash(string) {
         //return size % 
-        const H = 37;
+        const H = 37; // 37 would produce less than 7 collisions in each case
         for (var i = 0; i < string.length; i++) {
-            total += H * total + string.charCodeAt(i);
+            total += H * total + string.charCodeAt(i);// charCodeAt script return a character’s ASCII value after multiplying the ASCII value by a multiplier H
         }
         total %= this.table.length;
         if (total < 1) this.table.length - 1
