@@ -7,37 +7,6 @@ http.createServer(function (req, res) {
     //res.end('Hello World\n');
 }).listen(port);
 
-
-class Users { // js classes act like c++ structs
-    constructor() {    
-    }
-    
-    login(){
-      
-      let email = document.getElementById('email').value, 
-         // password = document.getElementById('password').value,
-          firstname = document.getElementById('fname').value,
-          lastname = document.getElementById('lname').value;
-      
-      //alert(email, password, firstname, lastname); //alert is a pop up box
-    }
-  }
-  
-      
-  const user = new Users();
-  const login = user.login
-
-//HTML
-/*
-<input type="text" id="uemail" />
-<input type="text" id="fname" />
-<input type="text" id="lname" />
-<button id="login" onclick="login()">submit</button>
-
- document.getElementById("uname").innerHTML
-                        = Hash(login); 
-*/
-
 class Hash {
     constructor() {
         this.map = {}
