@@ -15,7 +15,7 @@ class Users { // js classes act like c++ structs
     login(){
       
       let email = document.getElementById('email').value, 
-          password = document.getElementById('password').value,
+         // password = document.getElementById('password').value,
           firstname = document.getElementById('fname').value,
           lastname = document.getElementById('lname').value;
       
@@ -29,8 +29,7 @@ class Users { // js classes act like c++ structs
 
 //HTML
 /*
-<input type="text" id="email" />
-<input type="text" id="password" />
+<input type="text" id="uemail" />
 <input type="text" id="fname" />
 <input type="text" id="lname" />
 <button id="login" onclick="login()">submit</button>
