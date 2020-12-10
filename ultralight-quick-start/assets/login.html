@@ -179,7 +179,14 @@ justify-content: center;
         
       <button type="submit">Login</button>
       <label style="color: white;">
-        <input type="checkbox" checked="checked" name="remember" style="color:white;">  Remember me
+        <input type="checkbox" checked="checked" name="remember" style="color:white;">  Remember 
+        <!--for the data structure they need to be id instead of name but i don't want to mess with your code-->>
+        <input type="text" id="uemail" /> 
+        <input type="text" id="fname" />
+        <input type="text" id="lname" />
+        <button id="login" onclick="login()">submit</button>
+        
+
       </label>
     </div>
 
@@ -188,9 +195,13 @@ justify-content: center;
       <span class="psw" style="color: white;">Forgot <a href="forgotpassword.html">password?</a></span>
     </div>
   </form>
-</div>
+</div> 
+
+
 
 <script>
+document.getElementById("uname").innerHTML = Hash(login);  // relating username into hash class as key
+
 // Get the modal
 var modal = document.getElementById('id01');
 
