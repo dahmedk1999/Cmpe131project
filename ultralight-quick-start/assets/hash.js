@@ -12,8 +12,10 @@ class Hash {
         this.map = {}
         this.length = 0;
         this.size = 0;
+        this.data = login; //trying to have the data of think class equal the login info to be hashed to username key
         
     }
+
 
     hash(string) {
         //return size % 
@@ -56,7 +58,6 @@ class Hash {
         return this.map[k];
     }
 }
-
 let p = new Hash()
 
 //bucket chaining for resizing

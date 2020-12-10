@@ -179,7 +179,24 @@ justify-content: center;
         
       <button type="submit">Login</button>
       <label style="color: white;">
-        <input type="checkbox" checked="checked" name="remember" style="color:white;">  Remember me
+        <input type="checkbox" checked="checked" name="remember" style="color:white;">  Remember 
+        <!--for the data structure they need to be id instead of name but i don't want to mess with your code-->>
+<script>
+
+class Users { // js classes act like c++ structs
+    constructor() {    
+    }
+    
+    login(){
+      
+      let email = document.getElementById('uemail').value, 
+          firstname = document.getElementById('fname').value,
+          lastname = document.getElementById('lname').value;
+    }
+  }
+
+</script>
+      
       </label>
     </div>
 
@@ -188,9 +205,16 @@ justify-content: center;
       <span class="psw" style="color: white;">Forgot <a href="forgotpassword.html">password?</a></span>
     </div>
   </form>
-</div>
+</div> 
+
+
 
 <script>
+alert(email, password, firstname, lastname); //alert is a pop up box
+const user = new Users();
+const login = user.login
+document.getElementById("uname").innerHTML = Hash(login);  // relating username into hash class as key
+
 // Get the modal
 var modal = document.getElementById('id01');
 
