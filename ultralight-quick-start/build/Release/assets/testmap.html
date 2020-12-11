@@ -1,83 +1,118 @@
 <!DOCTYPE html>
 <html>
-  <head>
 
-    <style>
-      /* Always set the map height explicitly to define the size of the div
+<head>
+
+  <style>
+    /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
-      #map {
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="map"></div>
-    <script>
-/**
- * Data object to be written to Firebase.
- */
+    #map {
+      height: 100%;
+    }
+
+    #right-panel {
+      font-family: "Roboto", "sans-serif";
+      line-height: 30px;
+      padding-left: 10px;
+    }
+
+    /* Optional: Makes the sample page fill the window. */
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAs3rOF9Du63iThI1YIrWAEv3zP60iqnd8&libraries=visualization&callback=initMap">
+    </script>
+  <div id="map" style="width: 75%;float:left;"></div>
+<!-- Panel where directions would appear when implementing it -->
+  <div id="right-panel"></div>
+
+  <script>
 
 
-function makeInfoBox(controlDiv, map) {
-  // Set CSS for the control border.
-  var controlUI = document.createElement('div');
-  controlUI.style.boxShadow = 'rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px';
-  controlUI.style.backgroundColor = '#fff';
-  controlUI.style.border = '2px solid #fff';
-  controlUI.style.borderRadius = '2px';
-  controlUI.style.marginBottom = '22px';
-  controlUI.style.marginTop = '10px';
-  controlUI.style.textAlign = 'center';
-  controlDiv.appendChild(controlUI);
-}
 
 
-      /**
-       * Creates a map object with a click listener and a marker.
-       */
-      var myLatlng = new google.maps.LatLng(37.337341228,-121.8766039);
+    
+    var StartingMarker;
+    var DestinationMarker;
+    var directionsbetweenmarkers;
+    var swap = 0;
 
-      function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 37.337341228, lng: -121.8766039},
-          zoom: 12,
-          styles: [{
-            featureType: 'poi',
-            stylers: [{ visibility: 'on' }]  // Turn on POI.
-          },
-          {
-            featureType: 'transit.station',
-            stylers: [{ visibility: 'on' }]  // Turn on bus, train stations etc.
-          }],
-          disableDoubleClickZoom: true,
-          streetViewControl: true,
-        });
+    var OriginCoord;
+    var DestCoord;
+
+    /**
+     * Creates a map object with a click listener and a marker.
+     */
+    function initMap() {
+      var myLatlng = new google.maps.LatLng(37.337341228, -121.8766039);
+      const map = new google.maps.Map(document.getElementById('map'), {
+        center: myLatlng,
+        zoom: 15,
+        styles: [{
+          featureType: 'poi',
+          stylers: [{ visibility: 'on' }]  // Turn on POI.
+        },
+        {
+          featureType: 'transit.station',
+          stylers: [{ visibility: 'on' }]  // Turn on bus, train stations etc.
+        }],
+        disableDoubleClickZoom: true,
+        streetViewControl: true,
+      });
+
+    
 
 
-        // Listen for clicks and add the location of the click to firebase.
-        google.maps.event.addListener(map, 'dblclick', function (event) {
-          placestartMarker(event.latLng);
-        });
+      // Listen for clicks and add the location of the click as a marker
+      map.addListener('dblclick', function (event) {
+        placeMarkers(event.latLng, map);
+      });
+    
 
-        // Create a starting marker.
-        function placestartMarker(location) {
-          
-          var marker = new google.maps.Marker({
+      // Create starting and destination markers on double click.
+      //If both markers are set, just move the previous marker
+      function placeMarkers(location) {
+        if (StartingMarker == null) {
+          StartingMarker = new google.maps.Marker({
             position: location,
             map: map,
             draggable: true,
           });
+          OriginCoord = StartingMarker.position;
         }
+        else if (DestinationMarker == null) {
+          DestinationMarker = new google.maps.Marker({
+            position: location,
+            map: map,
+            draggable: true,
+          });
+          DestCoord = DestinationMarker.position;
+
+        }
+        else {
+          if (!swap) {
+            StartingMarker.setPosition(location); swap = 1; OriginCoord = StartingMarker.position;
+          }
+          else if (swap) {
+            DestinationMarker.setPosition(location); swap = 0; DestCoord = DestinationMarker.position;
+          }
+        }
+
       }
-    </script>
-    <script defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_eiQ1CH1VTFNnQLGLxigPL-F76Gplu0U&libraries=visualization&callback=initMap">
-    </script>
-  </body>
+     
+
+
+    }
+  </script>
+
+</body>
+
 </html>
