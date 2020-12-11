@@ -1,4 +1,0 @@
-C:/131Project/Cmpe131project/ultralight-quick-start/build/CMakeFiles/UltralightSDK.dir
-C:/131Project/Cmpe131project/ultralight-quick-start/build/CMakeFiles/MyApp.dir
-C:/131Project/Cmpe131project/ultralight-quick-start/build/CMakeFiles/ALL_BUILD.dir
-C:/131Project/Cmpe131project/ultralight-quick-start/build/CMakeFiles/ZERO_CHECK.dir

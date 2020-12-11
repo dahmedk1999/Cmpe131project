@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AbleGO</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAs3rOF9Du63iThI1YIrWAEv3zP60iqnd8&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <style type="text/css">
+      #right-panel {
+        font-family: "Roboto", "sans-serif";
+        padding-left: 8px;
+        line-height: 25px;
+      }
+
+      #right-panel select,
+      #right-panel input {
+        font-size: 17px;
+      }
+
+      #right-panel select {
+        width: 100%;
+      }
+      #right-panel {
+        float: left;
+        width: 24%;
+        height:100%;
+        overflow: scroll;
+      }
+
+      .panel {
+        height: 100%;
+        overflow:auto;
+      }
+      #right-panel i {
+        font-size: 12px;
+      }
+
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      #map {
+        height: 100%;
+        float: left;
+        width: 74%;
+      }
+
+
+    </style>
+    <script>
+      function initMap() {
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 15,
+          center: { lat: 37.337341228, lng: -121.8766039},
+        });
+        const directionsService = new google.maps.DirectionsService();
+        const directionsRenderer = new google.maps.DirectionsRenderer({
+          draggable: true,
+          map,
+          panel: document.getElementById("right-panel"),
+        });
+        directionsRenderer.addListener("directions_changed", () => {
+          computeTotalDistance(directionsRenderer.getDirections());
+        });
+        displayRoute(
+          "Santa Clara, CA",
+          "San Jose, CA",
+          directionsService,
+          directionsRenderer
+        );
+      }
+      var StartingMarker;
+      var DestinationMarker;
+
+      function displayRoute(origin, destination, service, display) {
+        service.route(
+          {
+            origin: origin,
+            destination: destination,
+            travelMode: google.maps.TravelMode.WALKING,
+            avoidTolls: true,
+            avoidHighways:true,
+          },
+          (result, status) => {
+            if (status === "OK") {
+              display.setDirections(result);
+            } else {
+              alert("Could not display directions due to: " + status);
+            }
+          }
+        );
+      }
+
+      function computeTotalDistance(result) {
+        let total = 0;
+        const myroute = result.routes[0];
+
+        for (let i = 0; i < myroute.legs.length; i++) {
+          total += myroute.legs[i].distance.value;
+        }
+        total = ((total/1000) * 0.6213712).toFixed(3);
+        document.getElementById("total").innerHTML = total + " mi";
+      }
+    </script>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div id="right-panel">
+      <p>Total Distance: <span id="total"></span></p>
+    </div>
+  </body>
+</html>
