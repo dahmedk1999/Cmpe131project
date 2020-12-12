@@ -183,7 +183,7 @@
 
 
   <div id="id01" class="modal">
-    <!-- /userhandling.php is placeholder password/user handling -->
+   
     <form class="modal-content animate" action="testmap2.html" method="post" style="background-color:#080808">
       <div class="imgcontainer">
         <span onclick="document.getElementById('id01').style.display='none'" class="close"
@@ -210,8 +210,7 @@
         <button type="submit">Login</button>
         <label style="color: white;">
           <input type="checkbox" checked="checked" name="remember" style="color:white;"> Remember
-          <!--for the data structure they need to be id instead of name but i don't want to mess with your code-->>
-
+         
         </label>
 
         <div class="container" style="background-color:#080808">
@@ -227,9 +226,8 @@
 var LocalStrategy   = require('hash.js').Strategy;
 var LocalStrategy   = require('password').Strategy;
 
-//js and jq for saving
+//js and jq for saving local storage
 $('#save').on('click', function(){
-
 $('input[type="text"]').each(function(){    
     var id = $(this).attr('id');
     var value = $(this).val();
@@ -248,12 +246,11 @@ $('input[type="text"]').each(function(){
 }); 
 });
 
-// Get form, item, and wishlist
+// Get info
 var addtouser = document.querySelector('#add_to_user');
 var firstname = document.querySelector('#fname');
 var lastname = document.querySelector('#lname');
-var useremail = document.querySelector('#uemail');
-var userinfo = document.querySelector('#userinfo');
+var userinfo = document.querySelector('#uemail');
 
 addtouser.addEventListener('submit', function (event) {
 
@@ -269,7 +266,7 @@ addtouser.addEventListener('submit', function (event) {
   userinfo.innerHTML += '<li>' + useremail.value + '</li>';
 
   // Clear input
-	wishlistItem.value = '';
+	userinfo.value = '';
 
   // Save the list to localStorage
   localStorage.setItem('firstname', userinfo.innerHTML);
