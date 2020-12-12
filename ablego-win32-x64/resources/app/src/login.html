@@ -192,16 +192,17 @@
       </div>
 
       <div class="container" style="background-color:#080808">
+        <form id = "add_to_user">
         <label for="fname" style="color: white;"><b>First Name</b></label>
-        <input type="text" style="color: whitesmoke;" placeholder="Enter Your First Name" name="fname" required>
+        <input type="text" name= "fname" id= "fname" style="color: whitesmoke;" placeholder="Enter Your First Name" name="fname" required>
         <label for="lname" style="color: white;"><b>Last Name</b></label>
-        <input type="text" style="color: whitesmoke;" placeholder="Enter Your Last Name" name="lname" required>
+        <input type="text" name= "lname" id= "lname" style="color: whitesmoke;" placeholder="Enter Your Last Name" name="lname" required>
 
         <label for="uemail" style="color: white;"><b>Email</b></label>
-        <input type="email" style="color: whitesmoke;" placeholder="Enter your email" name="uemail" required>
+        <input type="email" name= "uemail" id="uemail" style="color: whitesmoke;" placeholder="Enter your email" name="uemail" required>
 
         <label for="psw" style="color: white;"><b>Password</b></label>
-        <input type="password" style="color: whitesmoke;" minlength="16"
+        <input type="password" name="password" id="password" style="color: whitesmoke;" minlength="16"
           title="Passwords must be 16 or more characters, contain at least one number[0-9], lowercase letter[a-z], uppercase letter[A-Z], and a special character[@$!%*#?&]."
           pattern="^^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!#%*?&]{16,}$" placeholder="Enter Password"
           name="psw" required>
@@ -219,18 +220,52 @@
           <span class="psw" style="color: white;">Forgot <a href="forgotpassword.html">password?</a></span>
         </div>
     </form>
+  </form>
+    <ol id = "userinfo" ></ol>
   </div>
   <script>
 var LocalStrategy   = require('hash.js').Strategy;
 var LocalStrategy   = require('password').Strategy;
 
-myStorage = window.localStorage;
+// Get form, item, and wishlist
+var addtouser = document.querySelector('#add_to_user');
+var firstname = document.querySelector('#fname');
+var lastname = document.querySelector('#lname');
+var useremail = document.querySelector('#uemail');
+var userinfo = document.querySelector('#userinfo');
 
-    function USERStorage() {
-            localStorage.setItem('uemail');
-            localStorage.setItem('fname');
-            localStorage.setItem('lname');
-            }
+addtouser.addEventListener('submit', function (event) {
+
+	// Don't submit the form
+	event.preventDefault();
+
+	// Ignore it if the item is empty
+	if (firstname.value.length < 1 || lastname.value.length < 1 || useremail.value.length < 1 ) return;
+
+	// Add item to user
+  userinfo.innerHTML += '<li>' + firstname.value + '</li>';
+  userinfo.innerHTML += '<li>' + lastname.value + '</li>';
+  userinfo.innerHTML += '<li>' + useremail.value + '</li>';
+
+  // Clear input
+	wishlistItem.value = '';
+
+  // Save the list to localStorage
+  localStorage.setItem('firstname', userinfo.innerHTML);
+  localStorage.setItem('lastname', userinfo.innerHTML);
+  localStorage.setItem('useremail', userinfo.innerHTML);
+
+}, false);
+
+// Check for saved user items
+var saved = localStorage.getItem('firstname');
+var saved = localStorage.getItem('lastname');
+var saved = localStorage.getItem('username');
+
+// If there are any saved items, update our list
+if (saved) {
+	userinfo.innerHTML = saved;
+}
 
   </script>
 
