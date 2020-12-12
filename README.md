@@ -1,3 +1,5 @@
+ # AbleGO
+ Uses Google Maps Javascript API and Directions API to display map and directions.
  ### This project uses Node.js and Electron to build and package the html files into an desktop application.
 
 Tutorial and installation links found here:
@@ -27,9 +29,11 @@ npm install -g electron-forge<br>
 electron-forge init AbleGO<br>
 
 ### **Step 3:**
+cd AbleGO
 
-drag all of the files within the assets folder (html,jpgs,js, etc) and put them in /src folder at C:/Users/username/AbleGO
-
+move all files(html,jpgs,js, etc) within the assets folder to the AbleGO/src directory
+Windows:C:/Users/username/AbleGO<br>
+Mac: OS/users/AbleGO<br>
 ### **Step 4:**
 Verify the app works
 
