@@ -183,18 +183,11 @@ justify-content: center;
         <!--for the data structure they need to be id instead of name but i don't want to mess with your code-->>
 <script>
 
-class Users { // js classes act like c++ structs
-    constructor() {    
-    }
-    
-    login(){
-      
-      let email = document.getElementById('uemail').value, 
-          firstname = document.getElementById('fname').value,
-          lastname = document.getElementById('lname').value;
-    }
-  }
-
+  function populateStorage() {
+  localStorage.setItem('uemail');
+  localStorage.setItem('fname');
+  localStorage.setItem('lname');
+}
 </script>
       
       </label>
@@ -210,7 +203,6 @@ class Users { // js classes act like c++ structs
 
 
 <script>
-alert(email, password, firstname, lastname); //alert is a pop up box
 const user = new Users();
 const login = user.login
 document.getElementById("uname").innerHTML = Hash(login);  // relating username into hash class as key
