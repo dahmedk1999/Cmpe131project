@@ -45,7 +45,7 @@ class Hash {
 
     }
 
-    add(key, value) { // maybe not be necessary 
+    add(key, value) { 
         let size = this.hash(key);
         if (!this.map[size]) {
             this.map[k] = [];
