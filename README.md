@@ -28,6 +28,7 @@ Open command prompt or teminal<br>
 npm install -g electron-forge<br>
 electron-forge init AbleGO<br>
 
+Download git or any packages it prompts for
 ### **Step 3:**
 cd AbleGO
 
