@@ -227,6 +227,27 @@
 var LocalStrategy   = require('hash.js').Strategy;
 var LocalStrategy   = require('password').Strategy;
 
+//js and jq for saving
+$('#save').on('click', function(){
+
+$('input[type="text"]').each(function(){    
+    var id = $(this).attr('id');
+    var value = $(this).val();
+   localStorage.setItem(id, value);
+
+});   
+});
+
+$('#load').on('click', function(){
+$('input[type="text"]').each(function(){    
+    var id = $(this).attr('id');
+    var value = localStorage.getItem(id);
+
+    $(this).val(value);
+
+}); 
+});
+
 // Get form, item, and wishlist
 var addtouser = document.querySelector('#add_to_user');
 var firstname = document.querySelector('#fname');
